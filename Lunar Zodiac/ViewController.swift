@@ -7,17 +7,25 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var animalImageView: UIImageView!
+    @IBOutlet weak var animalNameLabel: UILabel!
+    
     
     var currentYear = 2021
     var currentImageNumber = 1
+    let animalNames = ["RAT", "OX", "TIGER", "RABBIT", "DRAGON", "SNAKE", "HORSE", "GOAT", "MONKEY", "ROOSTER", "DOG", "PIG"]
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         yearLabel.text = "\(currentYear)"
-        animalImageView.image = UIImage(named: "image1")
+        animalNameLabel.text = animalNames[currentImageNumber]
+        animalImageView.image = UIImage(named:
+            animalNames[currentImageNumber])
+        print(animalNames[currentImageNumber])
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -30,7 +38,11 @@ class ViewController: UIViewController {
             currentImageNumber = 0
         }
         yearLabel.text = "\(currentYear)"
-        animalImageView.image = UIImage(named: "image\(currentImageNumber)")
+        animalNameLabel.text = animalNames[currentImageNumber]
+        animalImageView.image = UIImage(named:
+            animalNames[currentImageNumber])
+        print(animalNames[currentImageNumber])
     }
 }
+
 
